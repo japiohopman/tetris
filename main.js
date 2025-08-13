@@ -635,6 +635,54 @@ function setupTouchControls() {
             performHold();
     });
 
+    // Disable context menu on long-press for canvas and controls
+    var disableContext = function (el) { return el && el.addEventListener('contextmenu', function (e) { return e.preventDefault(); }); };
+    disableContext(controls);
+    disableContext(canvas);
+
+    // Press-and-hold repeat for D-pad and down
+    var holdTimer = null;
+    var repeatInterval = null;
+    var startRepeat = function (fn) {
+        fn(); // immediate
+        holdTimer = setTimeout(function () {
+            repeatInterval = setInterval(fn, 80);
+        }, 260);
+    };
+    var stopRepeat = function () {
+        if (holdTimer)
+            clearTimeout(holdTimer);
+        if (repeatInterval)
+            clearInterval(repeatInterval);
+        holdTimer = null;
+        repeatInterval = null;
+    };
+
+    controls.addEventListener('pointerdown', function (ev) {
+        var target = ev.target;
+        if (!(target instanceof HTMLElement))
+            return;
+        var action = target.getAttribute('data-action');
+        if (!action)
+            return;
+        ev.preventDefault();
+        if (action === 'left')
+            startRepeat(function () { return playerMove(-1); });
+        else if (action === 'right')
+            startRepeat(function () { return playerMove(1); });
+        else if (action === 'down')
+            startRepeat(function () { return playerDrop(); });
+        else if (action === 'rotate')
+            playerRotate(1);
+        else if (action === 'drop')
+            playerHardDrop();
+        else if (action === 'hold')
+            performHold();
+    });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (type) {
+        controls.addEventListener(type, function () { return stopRepeat(); });
+    });
+
     // Basic swipe/tap gestures on the canvas
     var startX = 0, startY = 0, startTime = 0, moved = false;
     var threshold = 24; // px
