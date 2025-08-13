@@ -1,0 +1,105 @@
+body {
+    background: #111;
+    background-image: url('../tetris/assets/backgrounds/rusland_red_square_teteris_level1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0;
+    /* Removed display: grid, place-items, min-height, overflow: hidden */
+}
+
+#game-wrapper {
+    background: rgba(0, 0, 0, 0.6); /* half-transparante achtergrond */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: row; /* Explicitly set to row */
+    gap: 20px;
+    align-items: flex-start;
+    background-color: #44444470;
+    flex-wrap: nowrap;
+}
+
+#game-screen {
+    /* Override generic .screen layout for the actual game */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: #44444470;
+}
+
+#game-area-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex-shrink: 0; /* Prevent shrinking */
+    flex-grow: 0; /* Prevent growing */
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking */
+    flex-grow: 0; /* Prevent growing */
+}
+
+canvas {
+    background: #000;
+    border: 2px solid #444;
+}
+
+#score-display {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Use fixed positioning */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: #fff;
+    font-family: sans-serif;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 10; /* Ensure it's on top of other content */
+}
+
+.screen.hidden {
+    opacity: 0;
+    pointer-events: none; /* Disable interactions when hidden */
+}
+
+.screen button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.screen button:hover {
+    background-color: #45a049;
+}
