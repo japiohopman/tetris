@@ -76,15 +76,15 @@ var levels = [
         id: 3,
         music: '../tetris/assets/music/Tetris_lv3.mp3',
         background: '../tetris/assets/backgrounds/rusland_red_square_teteris_level1.png',
-        speed: 1000,
-        scoreToNextLevel: 2500
+        speed: 600,
+        scoreToNextLevel: 4000
     },
     {
         id: 4,
         music: '../tetris/assets/music/Tetris_lv4.mp3', // Placeholder
         background: '../tetris/assets/backgrounds/rusland_red_square_teteris_level2.png', // Placeholder
-        speed: 800,
-        scoreToNextLevel: 6000
+        speed: 400,
+        scoreToNextLevel: 8000
     },
     // Add more levels as needed
 ];
@@ -605,20 +605,75 @@ document.addEventListener("keydown", function (e) {
     else if (e.key === "w")
         playerRotate(1);
     else if (e.key === "Shift") {
-        if (canHold) {
-            if (holdPiece) {
-                _a = [holdPiece, player.matrix], player.matrix = _a[0], holdPiece = _a[1];
-            }
-            else {
-                holdPiece = player.matrix;
-                playerReset();
-            }
-            player.pos.y = 0;
-            player.pos.x = Math.floor(arenaWidth / 2) - Math.floor(player.matrix[0].length / 2);
-            canHold = false;
-        }
+        performHold();
     }
 });
+
+function setupTouchControls() {
+    var controls = document.getElementById('touch-controls');
+    if (!controls)
+        return;
+    // Button controls
+    controls.addEventListener('click', function (ev) {
+        var target = ev.target;
+        if (!(target instanceof HTMLElement))
+            return;
+        var action = target.getAttribute('data-action');
+        if (!action)
+            return;
+        if (action === 'left')
+            playerMove(-1);
+        else if (action === 'right')
+            playerMove(1);
+        else if (action === 'down')
+            playerDrop();
+        else if (action === 'drop')
+            playerHardDrop();
+        else if (action === 'rotate')
+            playerRotate(1);
+        else if (action === 'hold')
+            performHold();
+    });
+
+    // Basic swipe/tap gestures on the canvas
+    var startX = 0, startY = 0, startTime = 0, moved = false;
+    var threshold = 24; // px
+    var canvasEl = canvas;
+    canvasEl.addEventListener('touchstart', function (e) {
+        var t = e.changedTouches[0];
+        startX = t.clientX;
+        startY = t.clientY;
+        startTime = Date.now();
+        moved = false;
+    }, { passive: true });
+    canvasEl.addEventListener('touchmove', function (e) {
+        // Prevent scrolling while interacting
+        e.preventDefault();
+        var t = e.changedTouches[0];
+        var dx = t.clientX - startX;
+        var dy = t.clientY - startY;
+        if (!moved) {
+            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > threshold) {
+                playerMove(dx > 0 ? 1 : -1);
+                moved = true;
+            }
+            else if (Math.abs(dy) > threshold && dy > 0) {
+                playerDrop();
+                moved = true;
+            }
+        }
+    }, { passive: false });
+    canvasEl.addEventListener('touchend', function (e) {
+        var dt = Date.now() - startTime;
+        var t = e.changedTouches[0];
+        var dx = t.clientX - startX;
+        var dy = t.clientY - startY;
+        // Tap = rotate
+        if (!moved && Math.abs(dx) < threshold && Math.abs(dy) < threshold && dt < 250) {
+            playerRotate(1);
+        }
+    });
+}
 var audioManager = new AudioManager();
 var levelManager = new LevelManager("level", audioManager);
 var gameRunning = false; // Flag to control game loop
@@ -634,6 +689,7 @@ function startGame() {
 }
 // Initial setup
 showScreen('start-screen');
+setupTouchControls();
 startGameBtn.addEventListener('click', function () {
     audioManager.playSfx('buttonClick');
     showScreen('game-screen');

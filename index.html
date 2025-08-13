@@ -17,6 +17,15 @@
     <div id="game-screen" class="screen hidden">
         <div id="game-area-wrapper">
             <canvas id="tetris" width="240" height="400"></canvas>
+            <!-- Touch controls (shown on mobile only via CSS) -->
+            <div id="touch-controls">
+                <button data-action="left" aria-label="Move Left">◀</button>
+                <button data-action="rotate" aria-label="Rotate">⟳</button>
+                <button data-action="hold" aria-label="Hold">HOLD</button>
+                <button data-action="down" aria-label="Soft Drop">▼</button>
+                <button data-action="drop" aria-label="Hard Drop">⤓</button>
+                <button data-action="right" aria-label="Move Right">▶</button>
+            </div>
         </div>
         <div id="sidebar">
             <div id="level">Level: 1</div>

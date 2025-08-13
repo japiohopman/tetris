@@ -34,6 +34,62 @@ body {
     background-color: #44444470;
 }
 
+/* Touch controls hidden by default (desktop) */
+#touch-controls {
+    display: none;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#touch-controls button {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/* Responsive: stack layout and show touch controls on mobile */
+@media (max-width: 768px) {
+    #game-screen {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 12px;
+        gap: 16px;
+    }
+
+    /* Place sidebar under the canvas */
+    #sidebar {
+        width: 100%;
+        max-width: 360px;
+        background: rgba(0,0,0,0.35);
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    /* Make canvas scale to screen width while keeping aspect */
+    #game-area-wrapper canvas#tetris {
+        width: 90vw;
+        max-width: 360px;
+        height: auto; /* keep aspect ratio */
+    }
+
+    /* Show touch controls on mobile */
+    #touch-controls {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #touch-controls button {
+        min-width: 56px;
+        min-height: 44px; /* touch target */
+        font-size: 20px;
+    }
+}
+
 #game-area-wrapper {
     display: flex;
     flex-direction: column;
@@ -54,6 +110,7 @@ body {
 canvas {
     background: #000;
     border: 2px solid #444;
+    touch-action: none; /* prevent scroll/zoom during touch */
 }
 
 #score-display {
