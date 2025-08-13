@@ -60,13 +60,38 @@ html, body {
     color: #fff;
     border: 1px solid rgba(255,255,255,0.3);
     padding: 12px 14px;
-    border-radius: 8px;
+    border-radius: 50px;
     font-size: 18px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
+
+.menu-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: auto;
+}
+
+.menu-btn {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #731010;
+    background: radial-gradient(circle at 30% 30%, #d64b4b, #8c0f0f 70%);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100px;
+    height: 25px;
+    transform: rotate(-20deg);
+}
+
 
 /* Responsive: stack layout and show touch controls on mobile */
 @media (max-width: 768px) {
@@ -79,26 +104,36 @@ html, body {
         flex-wrap: nowrap;
     }
 
-    /* Place sidebar under the canvas */
+    /* Sidebar scales with viewport, stays right of canvas */
     #sidebar {
-        width: 34vw;
-        max-width: 200px;
+        flex: 0 0 32vw;
+        max-width: 220px;
         background: rgba(0,0,0,0.35);
         padding: 10px;
         border-radius: 8px;
     }
+    #sidebar h2 { font-size: 16px; margin: 8px 0 6px; }
+    #level, #score, #lines { font-size: 16px; }
+    #score-display, #lines-display { padding: 8px; }
+    /* Scale next/hold canvases */
+    #sidebar canvas#next,
+    #sidebar canvas#hold {
+        width: 26vw;
+        max-width: 140px;
+        height: auto;
+    }
 
     /* Make canvas smaller to leave room for controls */
     #game-area-wrapper canvas#tetris {
-        width: 55vw;
-        max-width: 280px;
+        width: 52vw;
+        max-width: 260px;
         height: auto; /* keep aspect ratio */
     }
 
     /* Stack controls under the canvas, sidebar remains right */
     #game-area-wrapper {
-        width: 60vw;
-        max-width: 320px;
+        width: 58vw;
+        max-width: 300px;
         align-items: center;
     }
 
@@ -106,11 +141,29 @@ html, body {
     #touch-controls {
         display: flex;
         width: 100%;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        margin-top: 10px;
     }
 
-    /* Game Boy style */
+    .menu-buttons {
+        order: 2;
+        position: relative;
+        bottom: -20px; /* slight downward offset */
+        margin: 0 20px;
+    }
+
+    .controls-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end; /* align bottoms */
+        width: 100%;
+        max-width: 420px;
+        gap: 40px; /* more space between D-pad and buttons */
+        margin-top: 20px;
+    }
+
+    /* D-pad styling */
     .dpad {
         position: relative;
         width: 120px;
@@ -123,7 +176,6 @@ html, body {
         border-radius: 12px;
         padding: 8px;
     }
-
     .dpad-btn {
         background: #111;
         border: 2px solid #333;
@@ -134,27 +186,41 @@ html, body {
         box-shadow: inset 0 2px 4px rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.4);
         font-size: 16px;
     }
-
     .dpad-btn.up { grid-column: 2; grid-row: 1; }
     .dpad-btn.left { grid-column: 1; grid-row: 2; }
     .dpad-btn.down { grid-column: 2; grid-row: 3; }
     .dpad-btn.right { grid-column: 3; grid-row: 2; }
 
+    /* D-pad left, action buttons right, Select/Start middle */
+    .dpad { order: 1; }
+    .menu-buttons { order: 2; }
+    .buttons { order: 3; }
+
+    /* A/B diagonal placement inside buttons area */
     .buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 14px;
-        padding-right: 8px;
+        position: relative;
+        width: 150px;
+        height: 120px;
+    }
+    .btn-a {
+        position: absolute;
+        right: 20px;
+        top: 0;
+    }
+    .btn-b {
+        position: absolute;
+        left: 20px;
+        bottom: 0;
     }
 
     .btn {
-        width: 62px;
-        height: 62px;
+        width: 66px;
+        height: 66px;
         border-radius: 50%;
-        border: 2px solid #7a0b0b;
-        background: radial-gradient(circle at 30% 30%, #ff6b6b, #b31217);
-        color: #200;
+        border: 2px solid #731010;
+        /* Red inspired by classic Game Boy buttons */
+        background: radial-gradient(circle at 30% 30%, #d64b4b, #8c0f0f 70%);
+        color: #220000;
         font-weight: bold;
         font-size: 18px;
         box-shadow: inset 0 4px 8px rgba(255,255,255,0.15), 0 4px 8px rgba(0,0,0,0.5);

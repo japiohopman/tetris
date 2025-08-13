@@ -614,6 +614,15 @@ function setupTouchControls() {
     if (!controls)
         return;
     // Button controls
+    var lastActionTs = {};
+    var tapCooldownMs = 300; // stronger debounce for single-tap actions
+    var canTrigger = function(action){
+        var now = Date.now();
+        var last = lastActionTs[action] || 0;
+        if (now - last < tapCooldownMs) return false;
+        lastActionTs[action] = now;
+        return true;
+    };
     controls.addEventListener('click', function (ev) {
         var target = ev.target;
         if (!(target instanceof HTMLElement))
@@ -627,12 +636,21 @@ function setupTouchControls() {
             playerMove(1);
         else if (action === 'down')
             playerDrop();
-        else if (action === 'drop')
-            playerHardDrop();
-        else if (action === 'rotate')
-            playerRotate(1);
-        else if (action === 'hold')
-            performHold();
+        else if (action === 'drop') {
+            if (canTrigger('drop')) playerHardDrop();
+        }
+        else if (action === 'rotate') {
+            if (canTrigger('rotate')) playerRotate(1);
+        }
+        else if (action === 'hold') {
+            if (canTrigger('hold')) performHold();
+        }
+        else if (action === 'start') {
+            if (canTrigger('start')) togglePause();
+        }
+        else if (action === 'select') {
+            if (canTrigger('select')) console.log('Select pressed');
+        }
     });
 
     // Disable context menu on long-press for canvas and controls
@@ -646,8 +664,8 @@ function setupTouchControls() {
     var startRepeat = function (fn) {
         fn(); // immediate
         holdTimer = setTimeout(function () {
-            repeatInterval = setInterval(fn, 80);
-        }, 260);
+            repeatInterval = setInterval(fn, 160); // even slower repeat
+        }, 450); // even longer initial delay
     };
     var stopRepeat = function () {
         if (holdTimer)
@@ -678,6 +696,10 @@ function setupTouchControls() {
             playerHardDrop();
         else if (action === 'hold')
             performHold();
+        else if (action === 'start')
+            togglePause();
+        else if (action === 'select')
+            console.log('Select pressed');
     });
     ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (type) {
         controls.addEventListener(type, function () { return stopRepeat(); });
@@ -685,7 +707,7 @@ function setupTouchControls() {
 
     // Basic swipe/tap gestures on the canvas
     var startX = 0, startY = 0, startTime = 0, moved = false;
-    var threshold = 24; // px
+    var threshold = 48; // px, require even more movement
     var canvasEl = canvas;
     canvasEl.addEventListener('touchstart', function (e) {
         var t = e.changedTouches[0];
@@ -701,12 +723,17 @@ function setupTouchControls() {
         var dx = t.clientX - startX;
         var dy = t.clientY - startY;
         if (!moved) {
-            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > threshold) {
+            if (Math.abs(dx) > Math.abs(dy) + 8 && Math.abs(dx) > threshold) { // stronger horizontal intent
                 playerMove(dx > 0 ? 1 : -1);
                 moved = true;
             }
-            else if (Math.abs(dy) > threshold && dy > 0) {
+            else if (Math.abs(dy) > Math.abs(dx) + 8 && Math.abs(dy) > threshold && dy > 0) { // stronger vertical intent
                 playerDrop();
+                moved = true;
+            }
+            else if (Math.abs(dy) > Math.abs(dx) + 8 && Math.abs(dy) > threshold && dy < 0) { // swipe up -> hold
+                // Swipe up -> hold
+                performHold();
                 moved = true;
             }
         }
@@ -717,14 +744,31 @@ function setupTouchControls() {
         var dx = t.clientX - startX;
         var dy = t.clientY - startY;
         // Tap = rotate
-        if (!moved && Math.abs(dx) < threshold && Math.abs(dy) < threshold && dt < 250) {
-            playerRotate(1);
+        if (!moved && Math.abs(dx) < threshold && Math.abs(dy) < threshold && dt < 180) {
+            if (canTrigger('rotate')) playerRotate(1);
         }
     });
 }
 var audioManager = new AudioManager();
 var levelManager = new LevelManager("level", audioManager);
 var gameRunning = false; // Flag to control game loop
+function togglePause() {
+    if (gameRunning) {
+        gameRunning = false;
+        // Pause music if playing
+        if (audioManager.currentAudio && !audioManager.currentAudio.paused) {
+            audioManager.currentAudio.pause();
+        }
+    }
+    else {
+        gameRunning = true;
+        // Resume music if loaded
+        if (audioManager.currentAudio && audioManager.currentAudio.paused) {
+            audioManager.currentAudio.play();
+        }
+        update();
+    }
+}
 function startGame() {
     gameRunning = true;
     arena.forEach(function (row) { return row.fill(0); }); // Clear arena

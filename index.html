@@ -19,16 +19,22 @@
             <canvas id="tetris" width="240" height="400"></canvas>
             <!-- Touch controls (shown on mobile only via CSS) -->
             <div id="touch-controls">
-                <div class="dpad" aria-label="D-Pad">
-                    <button class="dpad-btn up" data-action="rotate" aria-label="Rotate">▲</button>
-                    <button class="dpad-btn left" data-action="left" aria-label="Move Left">◀</button>
-                    <button class="dpad-btn down" data-action="down" aria-label="Soft Drop">▼</button>
-                    <button class="dpad-btn right" data-action="right" aria-label="Move Right">▶</button>
+
+                <div class="controls-row">
+                    <div class="dpad" aria-label="D-Pad">
+                        <button class="dpad-btn up" data-action="rotate" aria-label="Turn">▲</button>
+                        <button class="dpad-btn left" data-action="left" aria-label="Left">◀</button>
+                        <button class="dpad-btn down" data-action="down" aria-label="Soft Drop">▼</button>
+                        <button class="dpad-btn right" data-action="right" aria-label="Right">▶</button>
+                    </div>
+                                    <div class="menu-buttons" aria-label="Menu Buttons">
+                    <button class="menu-btn select" data-action="select" aria-label="Select">SELECT</button>
+                    <button class="menu-btn start" data-action="start" aria-label="Start/Pause">START</button>
                 </div>
-                <div class="buttons" aria-label="Action Buttons">
-                    <button class="btn btn-a" data-action="rotate" aria-label="Rotate">A</button>
-                    <button class="btn btn-b" data-action="drop" aria-label="Hard Drop">B</button>
-                    <button class="btn btn-hold" data-action="hold" aria-label="Hold">HOLD</button>
+                    <div class="buttons" aria-label="Action Buttons">
+                        <button class="btn btn-a" data-action="rotate" aria-label="Turn">A</button>
+                        <button class="btn btn-b" data-action="drop" aria-label="Drop">B</button>
+                    </div>
                 </div>
             </div>
         </div>
