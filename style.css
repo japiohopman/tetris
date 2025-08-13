@@ -43,6 +43,33 @@ html, body {
     justify-content: center;
     background-color: #44444470;
 }
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Use fixed positioning */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: #fff;
+    font-family: sans-serif;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 10; /* Ensure it's on top of other content */
+}
+
+.screen.hidden {
+    opacity: 0;
+    pointer-events: none; /* Disable interactions when hidden */
+}
+
+
+
+.screen button:hover {
+    background-color: #45a049;
+}
 
 /* Touch controls hidden by default (desktop) */
 #touch-controls {
@@ -55,27 +82,7 @@ html, body {
     user-select: none;
 }
 
-#touch-controls button {
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 12px 14px;
-    border-radius: 50px;
-    font-size: 18px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
 
-.menu-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    width: auto;
-}
 
 .menu-btn {
     padding: 8px 14px;
@@ -159,7 +166,7 @@ html, body {
         align-items: flex-end; /* align bottoms */
         width: 100%;
         max-width: 420px;
-        gap: 40px; /* more space between D-pad and buttons */
+        
         margin-top: 20px;
     }
 
@@ -190,6 +197,7 @@ html, body {
     .dpad-btn.left { grid-column: 1; grid-row: 2; }
     .dpad-btn.down { grid-column: 2; grid-row: 3; }
     .dpad-btn.right { grid-column: 3; grid-row: 2; }
+    .dpad-btn.center { grid-column: 2; grid-row: 2; }
 
     /* D-pad left, action buttons right, Select/Start middle */
     .dpad { order: 1; }
@@ -258,42 +266,3 @@ canvas {
     text-align: center;
 }
 
-.screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed; /* Use fixed positioning */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Use viewport width */
-    height: 100vh; /* Use viewport height */
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-    color: #fff;
-    font-family: sans-serif;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 10; /* Ensure it's on top of other content */
-}
-
-.screen.hidden {
-    opacity: 0;
-    pointer-events: none; /* Disable interactions when hidden */
-}
-
-.screen button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 0;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.screen button:hover {
-    background-color: #45a049;
-}
