@@ -59,14 +59,14 @@ const levels = [
         music: 'assets/music/Tetris_lv2.mp3',
         background: 'assets/backgrounds/usa_level2.png',
         speed: 800,
-        scoreToNextLevel: 1800
+        scoreToNextLevel: 2500
     },
     {
         id: 3,
         music: 'assets/music/Tetris_lv3.mp3',
         background: 'assets/backgrounds/egypte_level3.png',
         speed: 700,
-        scoreToNextLevel: 3500
+        scoreToNextLevel: 4000
     },
     {
         id: 4,
@@ -84,8 +84,8 @@ const levels = [
     },
     {
         id: 6,
-        music: 'assets/music/Tetris_lv6.mp3',
-        background: 'assets/backgrounds/france_level6.png',
+        music: 'tetris/assets/music/Tetris_lv6.mp3',
+        background: 'tetris/assets/backgrounds/france_level6.png',
         speed: 400,
         scoreToNextLevel: 10000
     }
@@ -610,7 +610,7 @@ function setupTouchControls() {
     if (!controls)
         return;
     const lastActionTs = {};
-    const tapCooldownMs = 200; // 200ms cooldown
+    const tapCooldownMs = 300; // 200ms cooldown
     const canTrigger = (action) => {
         const now = Date.now();
         const last = lastActionTs[action] || 0;

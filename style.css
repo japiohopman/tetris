@@ -3,13 +3,23 @@
     src: url('assets/fonts/Despair Time.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'LLPIXEL3';
+    src: url('assets/fonts/LLPIXEL3.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'CutePixel';
+    src: url('assets/fonts/CutePixel.ttf') format('truetype');
+}
+
 body {
     background: #111;
     background-image: url('../tetris/assets/backgrounds/rusland_red_square_teteris_level1.png');
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
-    font-family: sans-serif;
+    font-family: 'CutePixel', sans-serif;
     margin: 0;
     /* Removed display: grid, place-items, min-height, overflow: hidden */
     -webkit-user-select: none;
@@ -49,7 +59,6 @@ html, body {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #00000000;
 }
 .screen {
     display: flex;
@@ -60,12 +69,17 @@ html, body {
     top: 30px;
     left: 16px;
     width: 319px; /* Use viewport width */
-    height: 432px; /* Use viewport height */
+    height: 350px; /* Use viewport height */
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
     color: #fff;
-    font-family: sans-serif;
+    font-family: 'CutePixel', sans-serif;
     transition: opacity 0.5s ease-in-out;
     z-index: 10; /* Ensure it's on top of other content */
+    border-radius: 5px;
+}
+
+#game-over-screen h1 {
+    font-family: 'LLPIXEL3', sans-serif;
 }
 
 .screen.hidden {
@@ -132,27 +146,6 @@ canvas {
         width: 305px;
         margin: 6px;
         border-radius: 5px;
-        background-color: #44444470;
-        background-image: none;
-    }
-
-    #game-screen.level-1 {
-        background-image: url('assets/backgrounds/rusland_red_square_teteris_level1.png');
-    }
-    #game-screen.level-2 {
-        background-image: url('assets/backgrounds/usa_level2.png');
-    }
-    #game-screen.level-3 {
-        background-image: url('assets/backgrounds/egypte_level3.png');
-    }
-    #game-screen.level-4 {
-        background-image: url('assets/backgrounds/japan_level5.png');
-    }
-    #game-screen.level-5 {
-        background-image: url('assets/backgrounds/england_level5.png');
-    }
-    #game-screen.level-6 {
-        background-image: url('assets/backgrounds/france_level6.png');
     }
 
     /* Sidebar scales with viewport, stays right of canvas */
