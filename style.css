@@ -127,7 +127,7 @@ canvas {
         padding-top: 3px;
         gap: 12px;
         flex-wrap: nowrap;
-        height: 431px;
+        height: 354px;
         width: 305px;
         margin: 6px;
         border-radius: 5px;
@@ -173,7 +173,7 @@ canvas {
         align-items: center;
         margin-top: 10px;
         position: relative;
-        top: 499px;
+        top: 439px;
     }
 
    .menu-buttons {
@@ -334,7 +334,7 @@ canvas {
 
 .game-boy {
     background-color: darkgrey;
-    height: 709px;
+    height: 660px;
     border-radius: 8px 8px 60px 8px;
     width: 350px;
 }
