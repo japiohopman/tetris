@@ -49,6 +49,7 @@ html, body {
     align-items: center;
     width: 100%;
     height: 100%;
+    background-color: #00000000;
 }
 .screen {
     display: flex;
@@ -131,6 +132,27 @@ canvas {
         width: 305px;
         margin: 6px;
         border-radius: 5px;
+        background-color: #44444470;
+        background-image: none;
+    }
+
+    #game-screen.level-1 {
+        background-image: url('assets/backgrounds/rusland_red_square_teteris_level1.png');
+    }
+    #game-screen.level-2 {
+        background-image: url('assets/backgrounds/usa_level2.png');
+    }
+    #game-screen.level-3 {
+        background-image: url('assets/backgrounds/egypte_level3.png');
+    }
+    #game-screen.level-4 {
+        background-image: url('assets/backgrounds/japan_level5.png');
+    }
+    #game-screen.level-5 {
+        background-image: url('assets/backgrounds/england_level5.png');
+    }
+    #game-screen.level-6 {
+        background-image: url('assets/backgrounds/france_level6.png');
     }
 
     /* Sidebar scales with viewport, stays right of canvas */

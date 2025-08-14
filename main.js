@@ -49,19 +49,46 @@ function showScreen(screenId) {
 const levels = [
     {
         id: 1,
-        music: '../assets/music/Tetris_lv1.mp3',
-        background: '../assets/backgrounds/rusland_red_square_teteris_level1.png',
+        music: 'assets/music/Tetris_lv1.mp3',
+        background: 'assets/backgrounds/rusland_red_square_teteris_level1.png',
         speed: 1000,
         scoreToNextLevel: 1000
     },
     {
         id: 2,
-        music: '../assets/music/Tetris_lv2.mp3', // Placeholder
-        background: '../assets/backgrounds/rusland_red_square_teteris_level2.png', // Placeholder
+        music: 'assets/music/Tetris_lv2.mp3',
+        background: 'assets/backgrounds/usa_level2.png',
         speed: 800,
         scoreToNextLevel: 2500
     },
-    // Add more levels as needed
+    {
+        id: 3,
+        music: 'assets/music/Tetris_lv3.mp3',
+        background: 'assets/backgrounds/egypte_level3.png',
+        speed: 700,
+        scoreToNextLevel: 4000
+    },
+    {
+        id: 4,
+        music: 'assets/music/Tetris_lv4.mp3',
+        background: 'assets/backgrounds/japan_level5.png',
+        speed: 600,
+        scoreToNextLevel: 6000
+    },
+    {
+        id: 5,
+        music: 'assets/music/Tetris_lv5.mp3',
+        background: 'assets/backgrounds/england_level5.png',
+        speed: 500,
+        scoreToNextLevel: 8000
+    },
+    {
+        id: 6,
+        music: 'assets/music/Tetris_lv6.mp3',
+        background: 'assets/backgrounds/france_level6.png',
+        speed: 400,
+        scoreToNextLevel: 10000
+    }
 ];
 class AudioManager {
     constructor() {
@@ -71,22 +98,22 @@ class AudioManager {
         this.loadSfx();
     }
     loadSfx() {
-        this.sfx.move = new Audio('../tetris/assets/sounds/move.mp3');
-        this.sfx.rotate = new Audio('../tetris/assets/sounds/rotate.mp3');
-        this.sfx.softDrop = new Audio('../tetris/assets/sounds/softdrop.mp3');
-        this.sfx.hardDrop = new Audio('../tetris/assets/sounds/harddrop.mp3');
-        this.sfx.lock = new Audio('../tetris/assets/sounds/lock.mp3');
-        this.sfx.lineClear = new Audio('../tetris/assets/sounds/lineclear.mp3');
-        this.sfx.tetris = new Audio('../tetris/assets/sounds/tetris.mp3');
-        this.sfx.gameOver = new Audio('../tetris/assets/sounds/gameover.mp3');
-        this.sfx.levelUp = new Audio('../tetris/assets/sounds/levelup.mp3');
-        this.sfx.buttonClick = new Audio('../tetris/assets/sounds/buttonclick.mp3');
+        this.sfx.move = new Audio('assets/sounds/move.mp3');
+        this.sfx.rotate = new Audio('assets/sounds/rotate.mp3');
+        this.sfx.softDrop = new Audio('assets/sounds/softdrop.mp3');
+        this.sfx.hardDrop = new Audio('assets/sounds/harddrop.mp3');
+        this.sfx.lock = new Audio('assets/sounds/lock.mp3');
+        this.sfx.lineClear = new Audio('assets/sounds/lineclear.mp3');
+        this.sfx.tetris = new Audio('assets/sounds/tetris.mp3');
+        this.sfx.gameOver = new Audio('assets/sounds/gameover.mp3');
+        this.sfx.levelUp = new Audio('assets/sounds/levelup.mp3');
+        this.sfx.buttonClick = new Audio('assets/sounds/buttonclick.mp3');
         for (const key in this.sfx) {
             this.sfx[key].volume = this.sfxVolume;
         }
     }
     playMusic(filePath) {
-        if (this.currentAudio) {w
+        if (this.currentAudio) {
             this.currentAudio.pause();
             this.currentAudio.currentTime = 0;
         }
@@ -148,7 +175,7 @@ class LevelManager {
         dropInterval = level.speed;
         this.audioManager.playMusic(level.music);
         document.body.style.backgroundImage = `url('${level.background}')`;
-        gameScreen.className = 'screen'; // Reset classes
+        gameScreen.className = 'screen hidden'; // Reset classes
         gameScreen.classList.add(`level-${level.id}`);
     }
     updateLevelDisplay() {
@@ -597,6 +624,10 @@ function setupTouchControls() {
         const action = target.getAttribute('data-action');
         if (!action || !canTrigger(action))
             return;
+        // Haptic feedback
+        if (navigator.vibrate) {
+            navigator.vibrate(50); // Vibrate for 50ms
+        }
         switch (action) {
             case 'left':
                 playerMove(-1);
