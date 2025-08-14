@@ -13,51 +13,59 @@
         <button id="options-btn">Options</button>
         <button id="leaderboard-btn">Leaderboard</button>
     </div>
-
+ <div class="game-boy">
+        
     <div id="game-screen" class="screen hidden">
-        <div id="game-area-wrapper">
-            <canvas id="tetris" width="240" height="400"></canvas>
-            <!-- Touch controls (shown on mobile only via CSS) -->
-            <div id="touch-controls">
-
-                <div class="controls-row">
-                    <div class="dpad" aria-label="D-Pad">
-                        <button class="dpad-btn up" data-action="rotate" aria-label="Turn">▲</button>
-                        <button class="dpad-btn left" data-action="left" aria-label="Left">◀</button>
-                        <button class="dpad-btn down" data-action="down" aria-label="Soft Drop">▼</button>
-                        <button class="dpad-btn right" data-action="right" aria-label="Right">▶</button>
-                        <button class="dpad-btn center" aria-label="middle"></button>
-                    </div> <div class="menu-buttons" aria-label="Menu Buttons">
-                    <button class="menu-btn select" data-action="select" aria-label="Select">SELECT</button>
-                    <button class="menu-btn start" data-action="start" aria-label="Start/Pause">START</button>
-                </div>
-                                   
-                    <div class="buttons" aria-label="Action Buttons">
-                        <button class="btn btn-a" data-action="rotate" aria-label="Turn">A</button>
-                        <button class="btn btn-b" data-action="drop" aria-label="Drop">B</button>
-                    </div>
-                </div>
+       
+        <div id="game-container">
+            <div id="game-area-wrapper">
+                <canvas id="tetris" width="240" height="400"></canvas>
+               
                 
             </div>
-            
-        </div>
-        <div id="sidebar">
-            <div id="level">Level: 1</div>
-            <h2>Next</h2>
-            <canvas id="next" width="80" height="80"></canvas>
-            <h2>Hold</h2>
-            <canvas id="hold" width="80" height="80"></canvas>
-            <div id="score-display">
-                <h2>Score</h2>
-                <div id="score">0</div>
+            <div id="sidebar">
+                <div id="level">Level: 1</div>
+                <h2>Next</h2>
+                <canvas id="next" width="80" height="80"></canvas>
+                <h2>Hold</h2>
+                <canvas id="hold" width="80" height="80"></canvas>
+                <div id="score-display">
+                    <h2>Score</h2>
+                    <div id="score">0</div>
+                </div>
+                <div id="lines-display">
+                    <h2>Lines</h2>
+                    <div id="lines">0</div>
+                </div>
             </div>
-            <div id="lines-display">
-                <h2>Lines</h2>
-                <div id="lines">0</div>
-            </div>
         </div>
+         
     </div>
+    <!-- Touch controls (shown on mobile only via CSS) -->
+                <div id="touch-controls">
 
+                    <div class="controls-row">
+                        <div class="dpad" aria-label="D-Pad">
+                            <button class="dpad-btn up" data-action="rotate" aria-label="Turn">▲</button>
+                            <button class="dpad-btn left" data-action="left" aria-label="Left">◀</button>
+                            <button class="dpad-btn down" data-action="down" aria-label="Soft Drop">▼</button>
+                            <button class="dpad-btn right" data-action="right" aria-label="Right">▶</button>
+                            <button class="dpad-btn center" aria-label="middle"></button>
+                        </div> <div class="menu-buttons" aria-label="Menu Buttons">
+                        <button class="menu-btn select" data-action="select" aria-label="Select">SELECT</button>
+                        <button class="menu-btn start" data-action="start" aria-label="Start/Pause">START</button>
+                    </div>
+                                    
+                        <div class="buttons" aria-label="Action Buttons">
+                            <button class="btn btn-a" data-action="rotate" aria-label="Turn"></button>
+                            <p class="btn-label-a">A</p>
+                            <button class="btn btn-b" data-action="drop" aria-label="Drop"></button>
+                            <p class="btn-label-b">B</p>
+                        </div>
+                    </div>
+                    
+                </div>
+</div>
     <div id="game-over-screen" class="screen hidden">
         <h1>Game Over!</h1>
         <p>Final Score: <span id="final-score">0</span></p>

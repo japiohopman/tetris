@@ -5,10 +5,9 @@
         "strict": true,
         "lib": ["es2015", "dom"],
         "outDir": "./",
-        "rootDir": "./",
         "esModuleInterop": true
     },
-    "include": [
-        "**/*.ts"
+    "files": [
+        "main.ts"
     ]
 }

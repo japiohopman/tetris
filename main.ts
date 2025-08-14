@@ -39,17 +39,18 @@ const optionsBackBtn = document.getElementById("options-back-btn")!;
 function showScreen(screenId: string) {
     const screens = document.querySelectorAll('.screen');
     screens.forEach(screen => {
-        (screen as HTMLElement).classList.add('hidden');
-        // After transition, set display to none
-        setTimeout(() => {
-            (screen as HTMLElement).style.display = 'none';
-        }, 500); // Match CSS transition duration
+        if (screen.id === screenId) {
+            (screen as HTMLElement).style.display = 'flex';
+            setTimeout(() => {
+                (screen as HTMLElement).classList.remove('hidden');
+            }, 10);
+        } else {
+            (screen as HTMLElement).classList.add('hidden');
+            setTimeout(() => {
+                (screen as HTMLElement).style.display = 'none';
+            }, 500); // Match CSS transition duration
+        }
     });
-    const targetScreen = document.getElementById(screenId)!;
-    targetScreen.style.display = 'flex'; // Or 'block', depending on layout
-    setTimeout(() => {
-        targetScreen.classList.remove('hidden');
-    }, 10); // Small delay to allow display change to register before transition
 }
 
 interface Level {
@@ -79,7 +80,7 @@ const levels: Level[] = [
 ];
 
 class AudioManager {
-    private currentAudio: HTMLAudioElement | null = null;
+    public currentAudio: HTMLAudioElement | null = null;
     private sfx: {[key: string]: HTMLAudioElement} = {};
     private sfxVolume: number = 0.7; // Default SFX volume
 
@@ -88,7 +89,6 @@ class AudioManager {
     }
 
     private loadSfx() {
-        // Placeholder SFX paths - replace with actual paths
         this.sfx.move = new Audio('../assets/sounds/move.mp3');
         this.sfx.rotate = new Audio('../assets/sounds/rotate.mp3');
         this.sfx.softDrop = new Audio('../assets/sounds/softdrop.mp3');
@@ -505,9 +505,6 @@ function arenaSweep() {
             arena.unshift(row);
             linesCleared++;
             
-            // Trigger animation (old flash, will be replaced by particles)
-            // flashLines.push({y: y, alpha: 1.0});
-
             y++;
         }
     }
@@ -520,7 +517,6 @@ function arenaSweep() {
         } else {
             audioManager.playSfx('lineClear');
         }
-        // Add cleared block particles to a global array to be drawn and updated
         clearedBlocks.push(...clearedBlockParticles);
     }
 }
@@ -535,7 +531,7 @@ function drawMatrix(matrix: number[][], offset: {x: number, y: number}, ctx = co
         row.forEach((value, x) => {
             if (value !== 0) {
                 ctx.fillStyle = ["#000","#FF0","#0FF","#F0F","#0F0","#F00","#00F","#FFA500"][value];
-                ctx.fillRect(x + offset.x, y + offset.y, 1, 1);
+                ctx.fillRect(x + offset.x + 0.05, y + offset.y + 0.05, 0.9, 0.9);
             }
         });
     });
@@ -546,7 +542,7 @@ function drawGhostMatrix(matrix: number[][], offset: {x: number, y: number}) {
         row.forEach((value, x) => {
             if (value !== 0) {
                 context.fillStyle = 'rgba(255, 255, 255, 0.2)';
-                context.fillRect(x + offset.x, y + offset.y, 1, 1);
+                context.fillRect(x + offset.x + 0.05, y + offset.y + 0.05, 0.9, 0.9);
             }
         });
     });
@@ -556,14 +552,12 @@ function draw() {
     context.fillStyle = "#000";
     context.fillRect(0, 0, canvas.width, canvas.height);
     
-    // Apply shake effect
     context.save();
     context.translate(Math.random() * shakeAmount - shakeAmount / 2,
                       Math.random() * shakeAmount - shakeAmount / 2);
 
     drawMatrix(arena, {x: 0, y: 0});
 
-    // Draw ghost piece
     const ghostPos = {x: player.pos.x, y: player.pos.y};
     while (!collide(arena, {matrix: player.matrix, pos: ghostPos})) {
         ghostPos.y++;
@@ -573,9 +567,6 @@ function draw() {
 
     drawMatrix(player.matrix, player.pos);
 
-    
-
-    // Draw line clear animation (particles)
     clearedBlocks.forEach(particle => {
         context.save();
         context.globalAlpha = particle.alpha;
@@ -584,7 +575,6 @@ function draw() {
         context.restore();
     });
 
-    // Draw lock particles
     lockParticles.forEach(particle => {
         context.save();
         context.globalAlpha = particle.alpha;
@@ -593,7 +583,7 @@ function draw() {
         context.restore();
     });
 
-    context.restore(); // Restore context after shake
+    context.restore();
 
     nextCtx.fillStyle = "#000";
     nextCtx.fillRect(0, 0, nextCanvas.width, nextCanvas.height);
@@ -605,34 +595,31 @@ function draw() {
 }
 
 function update(time = 0) {
-    if (!gameRunning) return; // Stop game loop if not running
+    if (!gameRunning) return;
 
     const deltaTime = time - lastTime;
     lastTime = time;
 
-    // Decrease shake amount
     if (shakeAmount > 0) {
-        shakeAmount -= deltaTime / 100; // Decrease over 100ms
+        shakeAmount -= deltaTime / 100;
         if (shakeAmount < 0) shakeAmount = 0;
     }
 
-    // Update cleared block particles
     for (let i = clearedBlocks.length - 1; i >= 0; i--) {
         const particle = clearedBlocks[i];
-        particle.x += particle.vx * deltaTime / 1000; // Move horizontally
-        particle.y += particle.vy * deltaTime / 1000; // Move vertically
-        particle.alpha -= deltaTime / 500; // Fade out over 500ms
+        particle.x += particle.vx * deltaTime / 1000;
+        particle.y += particle.vy * deltaTime / 1000;
+        particle.alpha -= deltaTime / 500;
         if (particle.alpha <= 0) {
             clearedBlocks.splice(i, 1);
         }
     }
 
-    // Update lock particles
     for (let i = lockParticles.length - 1; i >= 0; i--) {
         const particle = lockParticles[i];
         particle.x += particle.vx * deltaTime / 1000;
         particle.y += particle.vy * deltaTime / 1000;
-        particle.alpha -= deltaTime / 500; // Fade out over 500ms
+        particle.alpha -= deltaTime / 500;
         if (particle.alpha <= 0) {
             lockParticles.splice(i, 1);
         }
@@ -641,13 +628,112 @@ function update(time = 0) {
     dropCounter += deltaTime;
     if (dropCounter > dropInterval) playerDrop();
     
-    // Update parallax background
-    const parallaxSpeed = 0.05; // Adjust for desired parallax effect
+    const parallaxSpeed = 0.05;
     const backgroundY = player.pos.y * parallaxSpeed;
     document.body.style.backgroundPositionY = `${backgroundY}px`;
 
     draw();
     requestAnimationFrame(update);
+}
+
+function performHold() {
+    if (canHold) {
+        if (holdPiece) {
+            [player.matrix, holdPiece] = [holdPiece, player.matrix];
+        } else {
+            holdPiece = player.matrix;
+            playerReset();
+        }
+        player.pos.y = 0;
+        player.pos.x = Math.floor(arenaWidth / 2) - Math.floor(player.matrix[0].length / 2);
+        canHold = false;
+    }
+}
+
+function togglePause() {
+    if (gameRunning) {
+        gameRunning = false;
+        if (audioManager.currentAudio && !audioManager.currentAudio.paused) {
+            audioManager.currentAudio.pause();
+        }
+    } else {
+        gameRunning = true;
+        if (audioManager.currentAudio && audioManager.currentAudio.paused) {
+            audioManager.currentAudio.play();
+        }
+        update();
+    }
+}
+
+function setupTouchControls() {
+    const controls = document.getElementById('touch-controls');
+    if (!controls) return;
+
+    const lastActionTs: { [key: string]: number } = {};
+    const tapCooldownMs = 200; // 200ms cooldown
+
+    const canTrigger = (action: string): boolean => {
+        const now = Date.now();
+        const last = lastActionTs[action] || 0;
+        if (now - last < tapCooldownMs) return false;
+        lastActionTs[action] = now;
+        return true;
+    };
+
+    controls.addEventListener('click', (ev: MouseEvent) => {
+        const target = ev.target as HTMLElement;
+        const action = target.getAttribute('data-action');
+        if (!action || !canTrigger(action)) return;
+
+        switch (action) {
+            case 'left': playerMove(-1); break;
+            case 'right': playerMove(1); break;
+            case 'down': playerDrop(); break;
+            case 'drop': playerHardDrop(); break;
+            case 'rotate': playerRotate(1); break;
+            case 'hold': performHold(); break;
+            case 'start': togglePause(); break;
+            case 'select': console.log('Select pressed'); break;
+        }
+    });
+
+    const disableContext = (el: HTMLElement | null) => el && el.addEventListener('contextmenu', e => e.preventDefault());
+    disableContext(controls);
+    disableContext(canvas);
+
+    let holdTimer: number | null = null;
+    let repeatInterval: number | null = null;
+
+    const startRepeat = (fn: () => void) => {
+        fn();
+        holdTimer = window.setTimeout(() => {
+            repeatInterval = window.setInterval(fn, 160);
+        }, 450);
+    };
+
+    const stopRepeat = () => {
+        if (holdTimer) clearTimeout(holdTimer);
+        if (repeatInterval) clearInterval(repeatInterval);
+        holdTimer = null;
+        repeatInterval = null;
+    };
+
+    controls.addEventListener('pointerdown', (ev: PointerEvent) => {
+        const target = ev.target as HTMLElement;
+        const action = target.getAttribute('data-action');
+        if (!action) return;
+        ev.preventDefault();
+
+        switch (action) {
+            case 'left': startRepeat(() => playerMove(-1)); break;
+            case 'right': startRepeat(() => playerMove(1)); break;
+            case 'down': startRepeat(() => playerDrop()); break;
+        }
+    });
+
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(type => {
+        controls.addEventListener(type, stopRepeat);
+    });
 }
 
 document.addEventListener("keydown", e => {
@@ -657,19 +743,7 @@ document.addEventListener("keydown", e => {
     else if (e.code === "Space") playerHardDrop();
     else if (e.key === "q") playerRotate(-1);
     else if (e.key === "w") playerRotate(1);
-    else if (e.key === "Shift") {
-        if (canHold) {
-            if (holdPiece) {
-                [player.matrix, holdPiece] = [holdPiece, player.matrix];
-            } else {
-                holdPiece = player.matrix;
-                playerReset();
-            }
-            player.pos.y = 0;
-            player.pos.x = Math.floor(arenaWidth / 2) - Math.floor(player.matrix[0].length / 2);
-            canHold = false;
-        }
-    }
+    else if (e.key === "Shift") performHold();
 });
 
 const audioManager = new AudioManager();
@@ -690,6 +764,7 @@ function startGame() {
 
 // Initial setup
 showScreen('start-screen');
+setupTouchControls(); // Initialize touch controls
 
 startGameBtn.addEventListener('click', () => {
     audioManager.playSfx('buttonClick');
@@ -699,7 +774,8 @@ startGameBtn.addEventListener('click', () => {
 
 optionsBtn.addEventListener('click', () => {
     audioManager.playSfx('buttonClick');
-    console.log('Options button clicked'); // Placeholder
+    showScreen('options-screen');
+    applyVolumeSettings();
 });
 
 leaderboardBtn.addEventListener('click', () => {

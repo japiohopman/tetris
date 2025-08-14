@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Despair Time';
+    src: url('assets/fonts/Despair Time.otf') format('opentype');
+}
+
 body {
     background: #111;
     background-image: url('../tetris/assets/backgrounds/rusland_red_square_teteris_level1.png');
@@ -27,21 +32,23 @@ html, body {
 
 #game-container {
     display: flex;
-    flex-direction: row; /* Explicitly set to row */
-    gap: 20px;
-    align-items: flex-start;
+    flex-direction: row;
+    /* gap: 9px; */
+    /* align-items: stretch; */ /* Make children same height */
     background-color: #44444470;
-    flex-wrap: nowrap;
+    padding: 1px;
+    border-radius: 10px;
+    /* flex-wrap: nowrap; */
+    width: 262px;
 }
 
 #game-screen {
-    /* Override generic .screen layout for the actual game */
+    /* This is now just a wrapper for game-container */
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
     justify-content: center;
-    background-color: #44444470;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 .screen {
     display: flex;
@@ -49,10 +56,10 @@ html, body {
     justify-content: center;
     align-items: center;
     position: fixed; /* Use fixed positioning */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Use viewport width */
-    height: 100vh; /* Use viewport height */
+    top: 30px;
+    left: 16px;
+    width: 319px; /* Use viewport width */
+    height: 432px; /* Use viewport height */
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
     color: #fff;
     font-family: sans-serif;
@@ -88,33 +95,48 @@ html, body {
     padding: 8px 14px;
     border-radius: 20px;
     border: 1px solid #731010;
-    background: radial-gradient(circle at 30% 30%, #d64b4b, #8c0f0f 70%);
+    background: radial-gradient(circle at 30% 30%, #616060, #342e2e 70%);
     color: #fff;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-shadow: 0 1px 2px rgba(0,0,0,0.7);
     box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.5);
-    width: 100px;
-    height: 25px;
-    transform: rotate(-20deg);
+    width: 70px;
+    height: 3px;
+    transform: rotate(-35deg);
+    font-size: 5px;
+}
+canvas {
+    background: #000;
+    border: 2px solid #444;
+    touch-action: none; /* prevent scroll/zoom during touch */
 }
 
 
 /* Responsive: stack layout and show touch controls on mobile */
 @media (max-width: 768px) {
-    #game-screen {
-        flex-direction: row; /* keep sidebar on the right */
+    #game-container {
+        
+        align-items: center;
+    }
+
+      #game-screen {
+        flex-direction: row;
         align-items: flex-start;
         justify-content: center;
-        padding-top: 12px;
+        padding-top: 3px;
         gap: 12px;
         flex-wrap: nowrap;
+        height: 431px;
+        width: 305px;
+        margin: 6px;
+        border-radius: 5px;
     }
 
     /* Sidebar scales with viewport, stays right of canvas */
     #sidebar {
         flex: 0 0 32vw;
-        max-width: 220px;
+        max-width: 44px;
         background: rgba(0,0,0,0.35);
         padding: 10px;
         border-radius: 8px;
@@ -125,9 +147,8 @@ html, body {
     /* Scale next/hold canvases */
     #sidebar canvas#next,
     #sidebar canvas#hold {
-        width: 26vw;
-        max-width: 140px;
-        height: auto;
+      
+        
     }
 
     /* Make canvas smaller to leave room for controls */
@@ -139,8 +160,8 @@ html, body {
 
     /* Stack controls under the canvas, sidebar remains right */
     #game-area-wrapper {
-        width: 58vw;
-        max-width: 300px;
+        width: 106vw;
+        max-width: 301px;
         align-items: center;
     }
 
@@ -151,13 +172,16 @@ html, body {
         justify-content: center;
         align-items: center;
         margin-top: 10px;
+        position: relative;
+        top: 532px;
     }
 
-    .menu-buttons {
+   .menu-buttons {
         order: 2;
-        position: relative;
-        bottom: -20px; /* slight downward offset */
-        margin: 0 20px;
+        position: absolute;
+        bottom: -119px;
+        margin: 3px 8px;
+        left: 90px;
     }
 
     .controls-row {
@@ -172,32 +196,56 @@ html, body {
 
     /* D-pad styling */
     .dpad {
-        position: relative;
+        position: absolute;
         width: 120px;
         height: 120px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        gap: 6px;
-        background: rgba(0,0,0,0.25);
-        border-radius: 12px;
+        background: rgba(0,0,0,0.07);
+        border-radius: 50%;
         padding: 8px;
+        left: 20px;
+        bottom: -84px;
     }
-    .dpad-btn {
-        background: #111;
+ .dpad-btn {
+        background: #222020;
         border: 2px solid #333;
-        color: #eee;
+        color: #221919;
         border-radius: 8px;
         min-width: 40px;
         min-height: 40px;
-        box-shadow: inset 0 2px 4px rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.4);
-        font-size: 16px;
+        box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05), 0 2px 4px rgba(0, 0, 0, 0.4);
+        font-size: 22px;
+        text-shadow: 1px 1px 0px #353130;
+        text-align: center;
     }
-    .dpad-btn.up { grid-column: 2; grid-row: 1; }
-    .dpad-btn.left { grid-column: 1; grid-row: 2; }
-    .dpad-btn.down { grid-column: 2; grid-row: 3; }
-    .dpad-btn.right { grid-column: 3; grid-row: 2; }
-    .dpad-btn.center { grid-column: 2; grid-row: 2; }
+    .dpad-btn.up { 
+        grid-column: 2; 
+        grid-row: 1;
+        border-radius: 10px 10px 0 0; /* Rounded top corners */
+     }
+
+    .dpad-btn.left {
+        grid-column: 1;
+        grid-row: 2;
+        border-radius:   10px 0 0 10px; /* Rounded bottom left corner */
+    }
+    .dpad-btn.down { 
+        grid-column: 2; 
+        grid-row: 3; 
+        border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+    }
+    .dpad-btn.right { 
+        grid-column: 3; 
+        grid-row: 2; 
+        border-radius: 0 10px 10px 0; /* Rounded top right corner */
+    }
+    .dpad-btn.center { 
+        grid-column: 2; 
+        grid-row: 2; 
+        border-radius: 0px;
+    }
 
     /* D-pad left, action buttons right, Select/Start middle */
     .dpad { order: 1; }
@@ -207,23 +255,22 @@ html, body {
     /* A/B diagonal placement inside buttons area */
     .buttons {
         position: relative;
-        width: 150px;
-        height: 120px;
+        
     }
-    .btn-a {
-        position: absolute;
-        right: 20px;
-        top: 0;
+ .btn-a {
+    position: absolute;
+    right: -319px;
+    top: -42px;
     }
     .btn-b {
         position: absolute;
-        left: 20px;
-        bottom: 0;
+        right: -258px;
+        bottom: -47px;
     }
 
     .btn {
-        width: 66px;
-        height: 66px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         border: 2px solid #731010;
         /* Red inspired by classic Game Boy buttons */
@@ -233,30 +280,49 @@ html, body {
         font-size: 18px;
         box-shadow: inset 0 4px 8px rgba(255,255,255,0.15), 0 4px 8px rgba(0,0,0,0.5);
     }
+    .btn-label-a {
+        position: absolute;
+        bottom: -59px;
+        left: 308px;
+        font-size: 25px;
+        color: #391be5;
+        transform: rotate(-35deg);
+        font-family: 'Despair Time';
+    }
+    .btn-label-b {
+        position: absolute;
+        bottom: -97px;
+        right: -267px;
+        font-size: 25px;
+        color: #391be5;
+        transform: rotate(-35deg);
+        font-family: 'Despair Time';
+    }
+    canvas {
+    background: #000;
+    border: 2px solid #444;
+    touch-action: none; /* prevent scroll/zoom during touch */
+    }
+
+
 }
 
 #game-area-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    flex-shrink: 0; /* Prevent shrinking */
-    flex-grow: 0; /* Prevent growing */
 }
 
 #sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex-shrink: 0; /* Prevent shrinking */
-    flex-grow: 0; /* Prevent growing */
+    justify-content: space-between;
+    background: rgba(0,0,0,0.35);
+    padding: 10px;
+    border-radius: 8px;
 }
 
-canvas {
-    background: #000;
-    border: 2px solid #444;
-    touch-action: none; /* prevent scroll/zoom during touch */
-}
+
 
 #score-display {
     background: rgba(0, 0, 0, 0.5);
@@ -266,3 +332,9 @@ canvas {
     text-align: center;
 }
 
+.game-boy {
+    background-color: darkgrey;
+    height: 800px;
+    border-radius: 8px 8px 60px 8px;
+    width: 350px;
+}
