@@ -173,7 +173,7 @@ canvas {
         align-items: center;
         margin-top: 10px;
         position: relative;
-        top: 532px;
+        top: 499px;
     }
 
    .menu-buttons {
@@ -334,7 +334,7 @@ canvas {
 
 .game-boy {
     background-color: darkgrey;
-    height: 800px;
+    height: 709px;
     border-radius: 8px 8px 60px 8px;
     width: 350px;
 }
