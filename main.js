@@ -59,14 +59,14 @@ const levels = [
         music: 'assets/music/Tetris_lv2.mp3',
         background: 'assets/backgrounds/usa_level2.png',
         speed: 800,
-        scoreToNextLevel: 2500
+        scoreToNextLevel: 1800
     },
     {
         id: 3,
         music: 'assets/music/Tetris_lv3.mp3',
         background: 'assets/backgrounds/egypte_level3.png',
         speed: 700,
-        scoreToNextLevel: 4000
+        scoreToNextLevel: 3500
     },
     {
         id: 4,
