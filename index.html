@@ -9,9 +9,13 @@
 <body>
     <div id="start-screen" class="screen">
         <h1>Tetris Advanced</h1>
-        <button id="start-game-btn">Start Game</button>
+        <div id="game-mode-selection">
+            <button id="start-game-a-btn">A-Type: Endless</button>
+            <button id="start-game-b-btn">B-Type: 25 Lines</button>
+        </div>
         <button id="options-btn">Options</button>
         <button id="leaderboard-btn">Leaderboard</button>
+        <button id="achievements-btn">Achievements</button>
     </div>
  <div class="game-boy">
         
@@ -92,7 +96,35 @@
             <label for="sfx-volume">SFX Volume:</label>
             <input type="range" id="sfx-volume" min="0" max="1" step="0.01" value="0.7">
         </div>
+        <div class="option-group">
+            <label>Music Type:</label>
+            <div id="music-type-buttons">
+                <button class="music-btn" data-music="A">A</button>
+                <button class="music-btn" data-music="B">B</button>
+                <button class="music-btn" data-music="C">Off</button>
+            </div>
+        </div>
         <button id="options-back-btn">Back to Main Menu</button>
+    </div>
+
+    <div id="level-up-screen" class="screen hidden">
+        <h1>Level Up!</h1>
+        <p>Go for Level <span id="next-level-display">1</span></p>
+    </div>
+
+    <div id="win-screen" class="screen hidden">
+        <h1>You Win!</h1>
+        <div id="rocket-animation-container">
+            <div id="rocket"></div>
+        </div>
+        <p>Final Score: <span id="win-score">0</span></p>
+        <button id="win-main-menu-btn">Main Menu</button>
+    </div>
+
+    <div id="achievements-screen" class="screen hidden">
+        <h1>Achievements</h1>
+        <ul id="achievements-list"></ul>
+        <button id="achievements-back-btn">Back to Main Menu</button>
     </div>
 
     <script src="main.js"></script>

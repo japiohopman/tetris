@@ -1,0 +1,49 @@
+Pas de spel­logica aan zodat het spel meer lijkt op de Tetris Game Boy-versie uit 1989.
+
+Levelstructuur en achtergronden
+
+Elke reeks levels heeft een unieke achtergrond, geïnspireerd door de Game Boy-versie:
+
+Level 0–2: Rusland – Sint-Basilkathedraal
+
+Level 3–5: Verenigde Staten – Vrijheidsbeeld
+
+Level 6–8: Egypte – Piramides van Gizeh
+
+Level 9–11: Japan – Pagode
+
+Level 12–15: Groot-Brittannië – Big Ben
+
+Level 16–19: Frankrijk – Eiffeltoren
+
+Level 20–25: Griekenland – Parthenon
+
+Level 26–29: Wereldbol / Ruimte – Raketten
+
+Levelovergangen
+
+Na het behalen van een level verschijnt een korte animatie op het scherm met een felicitatie (in stijl van Game Boy).
+
+Het speelveld wordt daarna leeggemaakt en het volgende level start.
+
+Bij het laatste level wordt een speciale eindanimatie afgespeeld (raketlancering), afhankelijk van het behaalde leveltype.
+
+Moeilijkheidsopbouw
+
+De snelheid van de vallende blokken neemt toe bij hogere levels.
+
+Een timer registreert hoe snel de speler een level afrondt.
+
+Naarmate de tijd in een level vordert, gaan de blokken geleidelijk sneller vallen (zoals op de Game Boy).
+
+Muziek
+
+De muziek versnelt synchroon met de blokken naarmate de tijd en het level vorderen, net als bij de Game Boy-versie.
+
+Optioneel: verschillende muziekopties (Music A – Korobeiniki, Music B – origineel, Music C – Bach Menuet).
+
+Extra details
+
+Bij het opstarten kan de speler kiezen welke muziek wordt afgespeeld.
+
+Bij hogere levels kunnen animaties of kleuren subtiel veranderen om de spanning te verhogen.

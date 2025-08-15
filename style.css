@@ -15,7 +15,7 @@
 
 body {
     background: #111;
-    background-image: url('../tetris/assets/backgrounds/rusland_red_square_teteris_level1.png');
+    background-image: url('assets/backgrounds/rusland_red_square_teteris_level1.png');
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
@@ -76,6 +76,7 @@ html, body {
     transition: opacity 0.5s ease-in-out;
     z-index: 10; /* Ensure it's on top of other content */
     border-radius: 5px;
+   
 }
 
 #game-over-screen h1 {
@@ -90,7 +91,47 @@ html, body {
 
 
 .screen button:hover {
-    background-color: #45a049;
+    background-color: #45a04900;
+    color: #42b958;
+}
+
+.screen button.focused {
+    
+    background-color: #4caf4f00;
+    color: #42b958;
+}
+
+#achievements-screen {
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+#achievements-list {
+    list-style: none;
+    padding: 0;
+    width: 90%;
+    max-height: 70%;
+    overflow-y: auto;
+}
+
+#achievements-list li {
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#achievements-list li.unlocked {
+    background: rgba(76, 175, 80, 0.5);
+}
+
+#achievements-list h3 {
+    margin: 0 0 5px 0;
+}
+
+#achievements-list p {
+    margin: 0;
+    font-size: 14px;
 }
 
 /* Touch controls hidden by default (desktop) */
@@ -146,6 +187,32 @@ canvas {
         width: 305px;
         margin: 6px;
         border-radius: 5px;
+    }
+
+    #game-screen.level-1 {
+        background-image: url('assets/backgrounds/rusland_red_square_teteris_level1.png');
+    }
+    #game-screen.level-2 {
+        background-image: url('assets/backgrounds/usa_level2.png');
+    }
+    #game-screen.level-3 {
+        background-image: url('assets/backgrounds/egypte_level3.png');
+    }
+    #game-screen.level-4 {
+        background-image: url('assets/backgrounds/japan_level5.png');
+    }
+    #game-screen.level-5 {
+        background-image: url('assets/backgrounds/england_level5.png');
+    }
+    #game-screen.level-6 {
+        background-image: url('assets/backgrounds/france_level6.png');
+    }
+
+    .game-boy {
+        background-color: darkgrey;
+        height: 660px;
+        border-radius: 8px 8px 60px 8px;
+        width: 350px;
     }
 
     /* Sidebar scales with viewport, stays right of canvas */
@@ -347,9 +414,94 @@ canvas {
     text-align: center;
 }
 
-.game-boy {
-    background-color: darkgrey;
-    height: 660px;
-    border-radius: 8px 8px 60px 8px;
-    width: 350px;
+
+
+#rocket-animation-container {
+    width: 100px;
+    height: 200px;
+    margin: 10px auto;
+    border: 1px solid #fff;
+    position: relative;
+    overflow: hidden;
+    background-color: #111;
+}
+
+#rocket {
+    width: 50px;
+    height: 100px;
+    background-image: url('assets/graphics/rocket.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -100px; /* Start below the screen */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#win-screen.visible #rocket {
+    animation: launch 3s linear forwards;
+}
+
+@keyframes launch {
+    from {
+        bottom: -100px;
+    }
+    to {
+        bottom: 250px; /* End above the screen */
+    }
+}
+
+#level-up-screen {
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 20; /* On top of other screens */
+}
+
+#start-screen  {
+    background-image: url('assets/backgrounds/Rusland_Sint-Basilkathedraal_b.png') ;
+    color: rgb(5, 5, 5);
+    
+}
+
+.screen button {
+    
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    font-family: 'CutePixel', sans-serif;
+    background-color: #ffffff00; /* Green */
+    height: 30px;
+}
+
+.screen button:hover {
+    color: #45a049;
+}
+
+#options-screen .option-group {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.music-btn {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background: #555;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.music-btn.selected {
+    background: #4CAF50;
+    border-color: #4CAF50;
 }
