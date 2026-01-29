@@ -8063,17 +8063,11 @@
       },
       {
         "collision": 0,
-        "sprite": {
-          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
-          "px": 184,
-          "py": 264,
-          "size": 16
-        },
         "portal": {
-          "targetMap": "Route_1",
+          "targetMap": "Fuchsia_City",
           "targetPos": {
-            "x": 10,
-            "y": 10
+            "x": 5,
+            "y": 5
           }
         }
       },
