@@ -8062,14 +8062,7 @@
         }
       },
       {
-        "collision": 0,
-        "portal": {
-          "targetMap": "Fuchsia_City",
-          "targetPos": {
-            "x": 5,
-            "y": 5
-          }
-        }
+        "collision": 0
       },
       {
         "collision": 1,
