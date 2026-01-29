@@ -7718,7 +7718,7 @@
         }
       },
       {
-        "collision": 0,
+        "collision": 1,
         "sprite": {
           "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
           "px": 504,
@@ -8068,6 +8068,13 @@
           "px": 184,
           "py": 264,
           "size": 16
+        },
+        "portal": {
+          "targetMap": "Route_1",
+          "targetPos": {
+            "x": 10,
+            "y": 10
+          }
         }
       },
       {
@@ -9245,7 +9252,7 @@
         }
       },
       {
-        "collision": 0,
+        "collision": 2,
         "sprite": {
           "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
           "px": 424,
@@ -9281,7 +9288,7 @@
         }
       },
       {
-        "collision": 0,
+        "collision": 2,
         "sprite": {
           "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
           "px": 488,
