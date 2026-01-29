@@ -1169,6 +1169,13 @@
           "px": 896,
           "py": 152,
           "size": 16
+        },
+        "portal": {
+          "targetMap": "Route_1",
+          "targetPos": {
+            "x": 10,
+            "y": 10
+          }
         }
       },
       {
@@ -1306,6 +1313,13 @@
           "px": 896,
           "py": 168,
           "size": 16
+        },
+        "portal": {
+          "targetMap": "Route_1",
+          "targetPos": {
+            "x": 10,
+            "y": 10
+          }
         }
       },
       {
