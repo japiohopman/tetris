@@ -1,0 +1,1376 @@
+{
+  "width": 15,
+  "height": 10,
+  "map": [
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 24,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 24,
+          "size": 16
+        }
+      }
+    ],
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 40,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 40,
+          "size": 16
+        }
+      }
+    ],
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 56,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 56,
+          "size": 16
+        }
+      }
+    ],
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 72,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 72,
+          "size": 16
+        }
+      }
+    ],
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 88,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 88,
+          "size": 16
+        }
+      }
+    ],
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 104,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 104,
+          "size": 16
+        }
+      }
+    ],
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 120,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 120,
+          "size": 16
+        }
+      }
+    ],
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 136,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 136,
+          "size": 16
+        }
+      }
+    ],
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 0,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 152,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 152,
+          "size": 16
+        }
+      }
+    ],
+    [
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 784,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 800,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 816,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 832,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 848,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 864,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 880,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 896,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 912,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 928,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 944,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 960,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 976,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 992,
+          "py": 168,
+          "size": 16
+        }
+      },
+      {
+        "collision": 1,
+        "sprite": {
+          "url": "https://www.spriters-resource.com/media/assets/4/3776.png?updated=1755472417",
+          "px": 1008,
+          "py": 168,
+          "size": 16
+        }
+      }
+    ]
+  ]
+}
